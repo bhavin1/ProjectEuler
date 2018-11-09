@@ -13,7 +13,8 @@ package com.bhavin;
  */
 public class Problem2 {
     
-    static int sum = 0;
+    static int fibValue = 0;
+    static long sum = 0;
     
     public int Problem2(int n){
         
@@ -21,14 +22,33 @@ public class Problem2 {
             return n;
         else
         {
-            return Problem2(n - 1) + n;
+            return Problem2(n-1)+Problem2(n-2);
         }
-        
     }
     
     public static void main(String args[]){
         Problem2 f = new Problem2();
-        sum = f.Problem2(10);
-        System.out.println(sum);
+        int i = 2;
+        do
+        {
+            
+            fibValue = f.Problem2(i);
+            if(fibValue % 2 == 0){
+                sum += fibValue;
+            }
+            System.out.println(fibValue);
+            i++;
+        }while (fibValue < 4000000);
+        
+        
+//        for(int i = 1; i <= 45; i++){
+//            
+//            if((fibValue < 4000000) && (fibValue % 2 == 1))
+//            {
+//                sum += i;
+//            }
+//            
+//        }
+        System.out.println("Sum of even fibonacci number below 4,000,000 is: " + sum);
     }
 }
