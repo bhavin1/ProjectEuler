@@ -14,10 +14,18 @@ public class Problem1 {
     
     public int sum = 0;
     
-    public Problem1(){
+    public Problem1(int n){
         
+        for(int i = 1; i < n; i++)
+        {
+            if((i % 3 == 0) || (i % 5 == 0))
+            {
+                sum += i;
+            }
+        }
+        System.out.println("The Sum of the multiples of 3 & 5 are: " + sum);
     }
     public static void main(String args[]){
-        
+        Problem1 p1 = new Problem1(1000);
     }
 }
