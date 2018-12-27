@@ -5,30 +5,41 @@
  */
 package com.bhavin;
 
+import java.util.ArrayList;
+
 /**
- *The prime factors of 13195 are 5, 7, 13 and 29.
-  What is the largest prime factor of the number 600851475143 ?
-* @author bhavin
+ * The prime factors of 13195 are 5, 7, 13 and 29. What is the largest prime
+ * factor of the number 600851475143 ?
+ *
+ * @author bhavin
  */
 public class Problem3 {
-    
-    public static int testNumber = 13195;
-    public int[] ray;
-    
-    public Problem3(int n){
-        ray = new int[n+1];
-        for(int i = 1; i <= n; i++){
-            if((n % 1 == 0) && (n % i == 0)){
-                ray[i] = i;
+
+    /**
+     *
+     */
+    public static long testNumber = 600851475143L;
+    public ArrayList primeList;
+    public ArrayList testList;
+
+    public Problem3(long n) {
+        primeList = new ArrayList();
+        testList = new ArrayList();
+        long counter = testNumber;
+        
+        do {
+
+            if ((testNumber % counter) == 0 && (testNumber % counter) == 0) {
+                primeList.add(counter);
             }
-            System.out.println(ray[i]);
-        }
-//        for(int j = 0; j < ray.length; j++){
-//            System.out.println("Prime factors of " + n + " is: "+ ray[j]);
-//        }
+            counter--;
+        } while (counter > 0);
+
+        //System.out.println(testList);
+        System.out.println(primeList);
     }
-    
+
     public static void main(String[] args) {
-        Problem3 primefactors = new Problem3(testNumber);
+        new Problem3(testNumber);
     }
 }
