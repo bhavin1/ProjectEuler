@@ -19,27 +19,63 @@ public class Problem3 {
      *
      */
     public static long testNumber = 600851475143L;
-    public ArrayList primeList;
-    public ArrayList testList;
+    public ArrayList factorList;
 
     public Problem3(long n) {
-        primeList = new ArrayList();
-        testList = new ArrayList();
-        long counter = testNumber;
         
-        do {
-
-            if ((testNumber % counter) == 0 && (testNumber % counter) == 0) {
-                primeList.add(counter);
+        factorList = new ArrayList();
+//        int counter = 1;
+//        do
+//        {
+//            if((n % counter == 0) && (counter % counter == 0))
+//            {
+//                System.out.println(counter);
+//                counter++;
+//                //factorList.add(i);
+//            }
+//        }while(counter <= n);
+        
+        for(int i = 2; i <= n; i++)
+        {
+            if((n % i == 0)&& (i % i == 0))
+            {
+                System.out.println(i);
+                //factorList.add(i);
             }
-            counter--;
-        } while (counter > 0);
+        }
 
         //System.out.println(testList);
-        System.out.println(primeList);
+        //System.out.println(factorList);
     }
 
     public static void main(String[] args) {
         new Problem3(testNumber);
     }
 }
+
+
+
+//public static long testNumber = 13451L;
+//    public ArrayList factorList;
+//    public ArrayList testList;
+//
+//    public Problem3(long n) {
+//        factorList = new ArrayList();
+//        testList = new ArrayList();
+//        long counter = testNumber;
+//        
+//        do {
+//
+//            if ((testNumber % counter) == 0 && (testNumber % counter) == 0) {
+//                factorList.add(counter);
+//            }
+//            counter--;
+//        } while (counter > 0);
+//
+//        //System.out.println(testList);
+//        System.out.println(factorList);
+//    }
+//
+//    public static void main(String[] args) {
+//        new Problem3(testNumber);
+//    }
