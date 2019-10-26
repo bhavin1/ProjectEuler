@@ -36,13 +36,10 @@ public class Problem3 {
 //        }while(counter <= n);
         
         for(int i = 2; i <= n; i++)
-        {
-            if((n % i == 0)&& (i % i == 0))
-            {
+            if ((n % i == 0) && (i % i == 0)) {
                 System.out.println(i);
                 //factorList.add(i);
             }
-        }
 
         //System.out.println(testList);
         //System.out.println(factorList);
